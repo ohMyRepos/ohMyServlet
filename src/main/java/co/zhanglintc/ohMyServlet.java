@@ -1,6 +1,5 @@
 package co.zhanglintc;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -14,8 +13,7 @@ import org.apache.commons.io.IOUtils;
 public class ohMyServlet extends HttpServlet {
     private String readIniFile() throws IOException {
         InputStream in = getServletContext().getClassLoader().getResourceAsStream("ohMyServlet.ini");
-        BufferedInputStream br = new BufferedInputStream(in);
-        String content = IOUtils.toString(br, "UTF-8");
+        String content = IOUtils.toString(in, "UTF-8");
         return content;
     }
 
