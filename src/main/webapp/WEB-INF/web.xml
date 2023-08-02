@@ -5,11 +5,11 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-    <servlet-name>index</servlet-name>
+    <servlet-name>home</servlet-name>
     <servlet-class>co.zhanglintc.ohMyServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>index</servlet-name>
-    <url-pattern>/hello</url-pattern>
+    <servlet-name>home</servlet-name>
+    <url-pattern>/home</url-pattern>
   </servlet-mapping>
 </web-app>
