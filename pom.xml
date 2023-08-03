@@ -35,7 +35,6 @@
 
   <build>
     <finalName>ohMyServlet</finalName>
-
     <plugins>
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -79,6 +78,20 @@
             </configuration>
             <goals>
               <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>co.zhanglintc.plugins</groupId>
+        <artifactId>zhanglintc-ohMyMojo-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <id>call-ohMyMojo</id>
+            <goals>
+              <goal>hello</goal>
             </goals>
           </execution>
         </executions>
