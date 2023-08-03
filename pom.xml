@@ -89,9 +89,10 @@
         <version>1.0</version>
         <executions>
           <execution>
-            <id>call-ohMyMojo</id>
+            <id>call-ohMyMojo-clean</id>
+            <phase>clean</phase>
             <goals>
-              <goal>hello</goal>
+              <goal>mojo</goal>
             </goals>
           </execution>
         </executions>
