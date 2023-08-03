@@ -14,9 +14,7 @@ import org.apache.commons.io.IOUtils;
 public class ohMyServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
-        System.out.println(1);
         super.init();
-        System.out.println(2);
     }
 
     private String readIniFile() throws IOException {
@@ -27,11 +25,9 @@ public class ohMyServlet extends HttpServlet {
 
     @Override
     public final void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println(3);
         String content = readIniFile();
 
         PrintWriter out = response.getWriter();
         out.println("ohMyServlet:\n" + content);
-        System.out.println(4);
     }
 }
