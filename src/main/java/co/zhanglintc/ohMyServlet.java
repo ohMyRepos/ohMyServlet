@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 
+import co.zhanglintc.annotation.ohMyAnno;
+
+@ohMyAnno(value = {"1st", "2nd"}, description = "This is My Annotation!")
 public class ohMyServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
@@ -25,9 +28,22 @@ public class ohMyServlet extends HttpServlet {
 
     @Override
     public final void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String content = readIniFile();
-
         PrintWriter out = response.getWriter();
-        out.println("ohMyServlet:\n" + content);
+
+        out.println("readIniFile:");
+        String content = readIniFile();
+        out.println(content);
+
+        out.println();
+
+        out.println("ohMyAnno:");
+        Class<?> clazz = ohMyServlet.class;
+        ohMyAnno anno = clazz.getAnnotation(ohMyAnno.class);
+        for (String v: anno.value()) {
+            out.println(v);
+        }
+        out.println(anno.description());
+
+        out.println();
     }
 }
