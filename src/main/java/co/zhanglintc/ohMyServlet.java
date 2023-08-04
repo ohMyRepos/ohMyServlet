@@ -39,12 +39,14 @@ public class ohMyServlet extends HttpServlet {
         out.println("ohMyAnno:");
         Class<?> clazz = ohMyServlet.class;
         ohMyAnno anno = clazz.getAnnotation(ohMyAnno.class);
-        for (String v: anno.value()) {
-            out.println(v);
+        if (anno == null) {
+            out.println("no annotation is set");
+        } else {
+            for (String v : anno.value()) {
+                out.println(v);
+            }
+            out.println(anno.description());
         }
-        out.println(anno.description());
-
-        out.println();
 
         out.close();
     }
