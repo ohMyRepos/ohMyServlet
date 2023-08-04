@@ -45,5 +45,7 @@ public class ohMyServlet extends HttpServlet {
         out.println(anno.description());
 
         out.println();
+
+        out.close();
     }
 }
