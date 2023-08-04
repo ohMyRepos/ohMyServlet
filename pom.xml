@@ -72,7 +72,7 @@
             </goals>
             <configuration>
               <groupId>co.zhanglintc.plugins</groupId>
-              <artifactId>zhanglintc-ohMyMojo-plugin</artifactId>
+              <artifactId>ohMyMojo-plugin</artifactId>
               <version>1.0</version>
               <packaging>jar</packaging>
               <file>${project.basedir}/plugins/ohMyMojo.jar</file>
@@ -130,7 +130,7 @@
 
       <plugin>
         <groupId>co.zhanglintc.plugins</groupId>
-        <artifactId>zhanglintc-ohMyMojo-plugin</artifactId>
+        <artifactId>ohMyMojo-plugin</artifactId>
         <version>1.0</version>
         <executions>
           <execution>
