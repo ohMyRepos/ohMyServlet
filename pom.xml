@@ -1,6 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>co.zhanglintc</groupId>
   <artifactId>ohMyServlet</artifactId>
@@ -36,6 +35,29 @@
 
   <build>
     <finalName>ohMyServlet</finalName>
+    <pluginManagement>
+      <!-- https://panlw.github.io/15512561553051.html -->
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <action>
+                    <execute>
+                      <runOnIncremental>false</runOnIncremental>
+                    </execute>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <!-- install ohMyMojo.jar at first -->
       <plugin>
@@ -44,7 +66,7 @@
         <version>2.5</version>
         <executions>
           <execution>
-            <phase>pre-clean</phase>
+            <phase>validate</phase>
             <goals>
               <goal>install-file</goal>
             </goals>
