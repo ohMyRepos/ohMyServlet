@@ -18,9 +18,28 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 
 @ohMyAnno(value = {"1st", "2nd"}, description = "This is My Annotation!")
 public class ohMyServlet extends HttpServlet {
+    {
+        System.out.println("ohMyServlet non static");
+    }
+
+    static {
+        System.out.println("ohMyServlet static");
+    }
+
+    public ohMyServlet() {
+        System.out.println("ohMyServlet constructor");
+    }
+
     @Override
     public void init() throws ServletException {
         super.init();
+        System.out.println("ohMyServlet init");
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        System.out.println("ohMyServlet destroy");
     }
 
     private String readIniFile() throws IOException {

@@ -10,6 +10,8 @@
   <servlet>
     <servlet-name>home</servlet-name>
     <servlet-class>co.zhanglintc.ohMyServlet</servlet-class>
+    <!-- load-on-startup is an order -->
+    <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>home</servlet-name>
